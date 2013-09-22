@@ -87,7 +87,7 @@ class MainCmd(cmd.Cmd):
     def do_login(self, rest):
         """Log in (prompts for username and password)."""
         if self._client.user_id is None:
-            user = input("Username: ")
+            user = raw_input("Username: ")
             password = getpass.getpass()
             self._client.login(user, password)
         else:
